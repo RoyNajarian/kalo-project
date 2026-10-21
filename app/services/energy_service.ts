@@ -8,7 +8,7 @@ type ProfileData = {
   intensity : number | null // 1 légère, 2 modérée, 3 intense
 }
 
-// Moule de l'objet renvoyé par compute() 
+// Moule de l'objet renvoyé par calculateEnergyNeeds() 
 export type EnergyResult = {
   bmr : number // métabolisme de base, en kcal/jour
   activityScore : number // séances × intensité, de 0 à 21
