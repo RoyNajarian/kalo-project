@@ -1,35 +1,35 @@
 // Moule des 6 données du profil dont les calculs ont besoin
 type ProfileData = {
-  sex : string | null // 'homme' ou 'femme'
-  age : number | null
-  heightCm : number | null
-  weightKg : number | null
-  sessionsPerWeek : number | null // séances par semaine, de 0 à 7
-  intensity : number | null // 1 légère, 2 modérée, 3 intense
+    sex : string | null // 'homme' ou 'femme'
+    age : number | null
+    heightCm : number | null
+    weightKg : number | null
+    sessionsPerWeek : number | null // séances par semaine, de 0 à 7
+    intensity : number | null // 1 légère, 2 modérée, 3 intense
 }
 
 // Moule de l'objet renvoyé par calculateEnergyNeeds() 
 export type EnergyResult = {
-  bmr : number // métabolisme de base, en kcal/jour
-  activityScore : number // séances × intensité, de 0 à 21
-  activityFactor : number // coefficient d'activité (1,2 à 1,9)
-  activityLabel : string
-  dailyMaintenance : number // maintien calorique par jour, en kcal
-  weeklyMaintenance : number // maintien calorique par semaine, en kcal
+    bmr : number // métabolisme de base, en kcal/jour
+    activityScore : number // séances × intensité, de 0 à 21
+    activityFactor : number // coefficient d'activité (1,2 à 1,9)
+    activityLabel : string
+    dailyMaintenance : number // maintien calorique par jour, en kcal
+    weeklyMaintenance : number // maintien calorique par semaine, en kcal
 }
 
 // Tableau des coefficients d'activité selon le score (séances × intensité)
 const ACTIVITY_LEVELS = [
-  { maxScore: 0, factor: 1.2, label: 'Sédentaire' },
-  { maxScore: 3, factor: 1.375, label: 'Légèrement actif' },
-  { maxScore: 9, factor: 1.55, label: 'Modérément actif' },
-  { maxScore: 15, factor: 1.725, label: 'Très actif' },
-  { maxScore: 21, factor: 1.9, label: 'Extrêmement actif' },
+    { maxScore: 0, factor: 1.2, label: 'Sédentaire' },
+    { maxScore: 3, factor: 1.375, label: 'Légèrement actif' },
+    { maxScore: 9, factor: 1.55, label: 'Modérément actif' },
+    { maxScore: 15, factor: 1.725, label: 'Très actif' },
+    { maxScore: 21, factor: 1.9, label: 'Extrêmement actif' },
 ]
 
 // Regroupe toute la logique du calcul énergétique
 export default class EnergyService {
-
+    
     // Vérifie que les 6 champs du profil sont remplis
     static isProfileComplete(profile: ProfileData): boolean {
         return profile.sex !== null && profile.age !== null && profile.heightCm !== null && profile.weightKg !== null && profile.sessionsPerWeek !== null && profile.intensity !== null;
