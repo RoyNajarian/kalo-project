@@ -29,9 +29,7 @@ export const loginValidator = vine.create({
   password: vine.string(),
 })
 
-/**
- * Validator to use when the user updates their profile
- */
+// Permet de valider les champs du profil utilisateur pour le calcul énergétique
 export const profileValidator = vine.create({
   sex: vine.enum(['homme', 'femme']), // Seulement ces deux valeurs
   age: vine.number().withoutDecimals().min(15).max(100), // Entier entre 15 et 100 ans

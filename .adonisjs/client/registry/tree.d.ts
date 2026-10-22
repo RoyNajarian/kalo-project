@@ -13,4 +13,9 @@ export interface ApiDefinition {
     destroy: typeof routes['session.destroy']
   }
   dashboard: typeof routes['dashboard']
+  profile: {
+    edit: typeof routes['profile.edit']
+    update: typeof routes['profile.update']
+    destroy: typeof routes['profile.destroy']
+  }
 }
