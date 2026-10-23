@@ -35,6 +35,6 @@ export const profileValidator = vine.create({
   age: vine.number().withoutDecimals().min(15).max(100), // Entier entre 15 et 100 ans
   heightCm: vine.number().withoutDecimals().min(100).max(250), // Entier entre 100 et 250 cm
   weightKg: vine.number().min(30).max(300), // Décimales autorisées
-  sessionsPerWeek: vine.number().withoutDecimals().min(0).max(7), // de 0 à 7 jours
+  sessionsPerWeek: vine.number().withoutDecimals().min(0).max(7), // De 0 à 7 jours
   intensity: vine.number().withoutDecimals().min(1).max(3), // 1, 2 ou 3
 })

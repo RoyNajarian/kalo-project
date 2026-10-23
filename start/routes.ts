@@ -27,7 +27,7 @@ router
 // Pages accessibles uniquement aux utilisateurs connectés
 router
   .group(() => {
-    router.on('/dashboard').renderInertia('dashboard', {}).as('dashboard')
+    router.get('dashboard', [controllers.Dashboard, 'show']).as('dashboard')
 
     router.get('profile', [controllers.Profile, 'edit'])
     router.post('profile', [controllers.Profile, 'update'])
